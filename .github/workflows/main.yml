@@ -2,7 +2,10 @@ name: "ESLint analysis"
 
 # Run workflow each time code is pushed to your repository and on a schedule.
 # The scheduled workflow runs every Wednesday at 15:45 UTC.
-on: workflow_dispatch
+on:
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ $default-branch ]
 
 jobs:
   eslint:
